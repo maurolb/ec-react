@@ -1,3 +1,11 @@
+import { Banner } from "../components/Banner";
+import { Sections } from "../components/Sections";
+
 export const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <Banner />
+      <Sections />
+    </>
+  );
 };
