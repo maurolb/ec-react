@@ -23,12 +23,27 @@ export const Section: React.FC<TitleProps> = ({ title }) => {
       price: 80,
     },
     {
-      id: 1,
+      id: 3,
       name: "Samsung xu82 24",
       price: 72,
     },
     {
-      id: 1,
+      id: 4,
+      name: "LG flatron 19",
+      price: 23,
+    },
+    {
+      id: 5,
+      name: "Samsung m84 21",
+      price: 80,
+    },
+    {
+      id: 6,
+      name: "Samsung xu82 24",
+      price: 72,
+    },
+    {
+      id: 7,
       name: "LG flatron 19",
       price: 23,
     },

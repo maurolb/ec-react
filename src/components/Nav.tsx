@@ -5,11 +5,9 @@ import { useNavigate } from "react-router-dom";
 export const Nav = () => {
   const navigate = useNavigate();
 
-  const handleNavigate =
-    (path: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault();
-      navigate(path);
-    };
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
 
   return (
     <Navbar className="h-24 " fluid rounded>
@@ -54,16 +52,25 @@ export const Nav = () => {
       </div>
       <Navbar.Collapse>
         <Navbar.Link
-          className="text-lg cursor-pointer"
-          onClick={handleNavigate("/")}
+          className="text-lg cursor-pointer font-bold text-gray-700/90"
+          onClick={() => handleNavigate("/")}
         >
           Inicio
         </Navbar.Link>
-        <Navbar.Link
+        {/* <Navbar.Link
           className="text-lg cursor-pointer"
           onClick={handleNavigate("/products")}
         >
           Productos
+        </Navbar.Link> */}
+        <Navbar.Link className="text-lg cursor-pointer font-bold text-gray-700/90">
+          <Dropdown arrowIcon={true} inline label="Categorias">
+            <Dropdown.Item onClick={() => handleNavigate("/products")}>
+              Monitores
+            </Dropdown.Item>
+            <Dropdown.Item>Teclados</Dropdown.Item>
+            <Dropdown.Item>Procesadores</Dropdown.Item>
+          </Dropdown>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
