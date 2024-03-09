@@ -1,4 +1,4 @@
-import { IconArrowRight, IconMail } from "@tabler/icons-react";
+import { IconArrowRight } from "@tabler/icons-react";
 import { Button, Card, FloatingLabel } from "flowbite-react";
 
 export const LoginPage = () => {
