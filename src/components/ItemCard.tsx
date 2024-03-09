@@ -10,7 +10,7 @@ export const ItemCard: React.FC<CardProps> = ({ item }) => {
     <Card
       className="w-64 transition-transform transform hover:scale-105 cursor-pointer"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc="src/assets/carousel-1.svg"
+      imgSrc="https://flowbite.com/docs/images/carousel/carousel-3.svg"
     >
       <div>
         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
