@@ -4,6 +4,7 @@ import { ProductPage } from "../pages/ProductPage";
 import { AppLayout } from "../pages/AppLayout";
 import { LoginPage } from "../pages/LoginPage";
 import { RegisterPage } from "../pages/RegisterPage";
+import { Dashboard } from "../pages/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,14 @@ const router = createBrowserRouter([
     element: (
       <AppLayout>
         <ProductPage />
+      </AppLayout>
+    ),
+  },
+  {
+    path: "/cuenta",
+    element: (
+      <AppLayout>
+        <Dashboard />
       </AppLayout>
     ),
   },
