@@ -19,6 +19,7 @@ export const SearchSettings = () => {
       <div className="flex flex-col gap-2 text-sm">
         <a href="">Samsung</a>
         <a href="">LG</a>
+        <a href="">asdsad</a>
         <a href="">Sowie</a>
         <a href="">Asus</a>
       </div>
