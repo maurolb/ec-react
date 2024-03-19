@@ -5,6 +5,7 @@ import { AppLayout } from "../pages/AppLayout";
 import { LoginPage } from "../pages/LoginPage";
 import { RegisterPage } from "../pages/RegisterPage";
 import { Dashboard } from "../pages/Dashboard";
+import { CartPage } from "../pages/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,14 @@ const router = createBrowserRouter([
     element: (
       <AppLayout>
         <ProductPage />
+      </AppLayout>
+    ),
+  },
+  {
+    path: "/cart",
+    element: (
+      <AppLayout>
+        <CartPage />
       </AppLayout>
     ),
   },
