@@ -1,4 +1,11 @@
+import React from "react";
 import { ItemCard } from "./ItemCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/free-mode";
+import { Autoplay, Navigation } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 
 export interface dataItem {
   id: number;
@@ -49,14 +56,52 @@ export const Section: React.FC<TitleProps> = ({ title }) => {
     },
   ];
 
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
+
   return (
-    <div className="flex flex-col">
-      <h2 className="text-gray-700 font-bold text-xl mb-4">{title}</h2>
-      <div className="flex flex-wrap gap-4 justify-center">
-        {items.map((item: dataItem) => (
-          <ItemCard key={item.id} item={item!} />
-        ))}
+    <div>
+      <div className="flex justify-between w-full px-8">
+        <h2 className="text-gray-700 font-bold text-2xl mb-4">{title}</h2>
+        <span
+          onClick={() => handleNavigate("/products")}
+          className="font-bold text-cyan-800 underline cursor-pointer"
+        >
+          Ver todos
+        </span>
       </div>
+      <Swiper
+        breakpoints={{
+          540: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          700: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          1366: {
+            slidesPerView: 4,
+            spaceBetween: 5,
+          },
+        }}
+        autoplay={{ delay: 5000 }}
+        loop
+        navigation
+        modules={[Navigation, Autoplay]}
+        className="max-w-[100%] "
+      >
+        {items.map((item: dataItem) => (
+          <SwiperSlide key={item.id}>
+            <div className="flex justify-center my-3">
+              <ItemCard key={item.id} item={item!} />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
