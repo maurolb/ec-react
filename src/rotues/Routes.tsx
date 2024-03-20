@@ -6,6 +6,7 @@ import { LoginPage } from "../pages/LoginPage";
 import { RegisterPage } from "../pages/RegisterPage";
 import { Dashboard } from "../pages/Dashboard";
 import { CartPage } from "../pages/CartPage";
+import { ProductDetails } from "../pages/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,14 @@ const router = createBrowserRouter([
     element: (
       <AppLayout>
         <ProductPage />
+      </AppLayout>
+    ),
+  },
+  {
+    path: "/products/:id",
+    element: (
+      <AppLayout>
+        <ProductDetails />
       </AppLayout>
     ),
   },

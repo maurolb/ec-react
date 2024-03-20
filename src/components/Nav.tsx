@@ -33,7 +33,10 @@ export const Nav = () => {
         <div className="w-2/4 sm:w-1/4 md:w-1/3">
           {isLogged ? (
             <div className="flex gap-4 lg:gap-8 justify-end pe-0 md:pe-4">
-              <button className="bg-cyan-700 w-10 h10 rounded-full text-white">
+              <button
+                onClick={() => handleNavigate("/cart")}
+                className="bg-cyan-700 w-10 h10 rounded-full text-white"
+              >
                 <IconShoppingCart className="ms-auto me-auto" />
               </button>
               <Dropdown
