@@ -1,13 +1,21 @@
 import { Card } from "flowbite-react";
 import { dataItem } from "./Section";
+import { useNavigate } from "react-router-dom";
 
 type CardProps = {
   item: dataItem;
 };
 
 export const ItemCard: React.FC<CardProps> = ({ item }) => {
+  const navigate = useNavigate();
+
+  // todo: hacer bien esto
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
   return (
     <Card
+      onClick={() => handleNavigate("/products/1")}
       className="w-64 transition-transform transform hover:scale-105 cursor-pointer"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
       imgSrc="https://flowbite.com/docs/images/carousel/carousel-3.svg"
