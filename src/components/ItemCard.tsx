@@ -16,7 +16,7 @@ export const ItemCard: React.FC<CardProps> = ({ item }) => {
   return (
     <Card
       onClick={() => handleNavigate("/products/1")}
-      className="w-64 transition-transform transform hover:scale-105 cursor-pointer"
+      className="w-72 transition-transform transform hover:scale-105 cursor-pointer"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
       imgSrc="https://flowbite.com/docs/images/carousel/carousel-3.svg"
     >
