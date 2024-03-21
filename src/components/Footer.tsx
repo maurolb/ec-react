@@ -13,7 +13,8 @@ export const Foot = () => {
     <Footer container className="rounded-none shadow-none">
       <div className="w-full">
         <div className="grid w-full justify-center sm:flex sm:justify-between md:flex md:grid-cols-1">
-          <div className="flex items-center mb-6 md:mb-0 ">
+          {/* items-center mb-6 md:mb-0 */}
+          <div className="flex sm:flex-col items-center mb-6 md:mb-0  ">
             <Footer.Brand
               src={logo}
               alt="App Logo"
@@ -27,7 +28,7 @@ export const Foot = () => {
               <Footer.Title title="productos" className="text-left" />
               <Footer.LinkGroup col className="text-left">
                 <Footer.Link href="#">Destacados</Footer.Link>
-                <Footer.Link href="#">Oferta</Footer.Link>
+                <Footer.Link href="#">Ofertas</Footer.Link>
               </Footer.LinkGroup>
             </div>
 

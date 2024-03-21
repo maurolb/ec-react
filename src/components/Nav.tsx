@@ -91,7 +91,7 @@ export const Nav = () => {
             className="text-lg cursor-pointer font-bold text-gray-700/90 me-6"
             onClick={() => handleNavigate("/products")}
           >
-            En oferta
+            Ofertas
           </Navbar.Link>
           <Navbar.Link className="text-lg cursor-pointer font-bold text-gray-700/90 flex justify-center">
             <Dropdown arrowIcon={true} inline label="Categorias">
