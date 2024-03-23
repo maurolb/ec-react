@@ -1,6 +1,6 @@
 import { IconCalendar, IconUser } from "@tabler/icons-react";
 import { Button, Card } from "flowbite-react";
-import { Banner } from "../components/Banner";
+import { Recomended } from "../components/Recomended";
 
 export const Dashboard = () => {
   return (
@@ -26,8 +26,8 @@ export const Dashboard = () => {
         <Button>Cerrar Sesion</Button>
       </div>
 
-      <div className="mt-5">
-        <Banner />
+      <div className="mt-20">
+        <Recomended title={"Ofertas"} />
       </div>
     </div>
   );

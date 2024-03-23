@@ -1,24 +1,17 @@
-import React from "react";
-import { ItemCard } from "./ItemCard";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Card } from "flowbite-react";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
-import { Autoplay, Navigation } from "swiper/modules";
-import { useNavigate } from "react-router-dom";
-
-export interface dataItem {
-  id: number;
-  name: string;
-  price: number;
-}
 
 type TitleProps = {
   title: string;
 };
 
-export const Section: React.FC<TitleProps> = ({ title }) => {
-  let items: dataItem[] = [
+export const Recomended: React.FC<TitleProps> = ({ title }) => {
+  let items: any[] = [
     {
       id: 1,
       name: "LG x54 19",
@@ -56,23 +49,11 @@ export const Section: React.FC<TitleProps> = ({ title }) => {
     },
   ];
 
-  const navigate = useNavigate();
-
-  const handleNavigate = (path: string) => {
-    navigate(path);
-  };
-
   return (
-    <div>
-      <div className="flex justify-between w-full px-8">
-        <h2 className="text-gray-700 font-bold text-2xl mb-4">{title}</h2>
-        <span
-          onClick={() => handleNavigate("/products")}
-          className="font-bold text-cyan-800 underline cursor-pointer"
-        >
-          Ver todos
-        </span>
-      </div>
+    <>
+      <span className="font-bold text-lg text-center md:text-start md:ms-2 xl:ms-0 text-gray-800 mt-16">
+        {title}
+      </span>
       <Swiper
         style={
           {
@@ -82,31 +63,50 @@ export const Section: React.FC<TitleProps> = ({ title }) => {
         breakpoints={{
           540: {
             slidesPerView: 2,
-            spaceBetween: 15,
+            spaceBetween: 0,
           },
-          700: {
+          740: {
             slidesPerView: 3,
-            spaceBetween: 15,
+            spaceBetween: 0,
+          },
+          980: {
+            slidesPerView: 4,
+            spaceBetween: 0,
           },
           1366: {
-            slidesPerView: 4,
-            spaceBetween: 5,
+            slidesPerView: 5,
+            spaceBetween: 0,
           },
         }}
         autoplay={{ delay: 5000 }}
         loop
         navigation
         modules={[Navigation, Autoplay]}
-        className="max-w-[100%] "
+        className="max-w-[100%]"
       >
-        {items.map((item: dataItem) => (
+        {items.map((item: any) => (
           <SwiperSlide key={item.id}>
             <div className="flex justify-center my-3">
-              <ItemCard key={item.id} item={item!} />
+              <Card
+                className="w-60 cursor-pointer"
+                imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
+                imgSrc="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+              >
+                <div>
+                  <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    {item.name}
+                  </h5>
+                </div>
+                <div className="text-center">
+                  <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                    $ {item.price}
+                  </span>
+                </div>
+              </Card>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </>
   );
 };
