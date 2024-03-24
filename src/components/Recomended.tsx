@@ -5,6 +5,7 @@ import { Card } from "flowbite-react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
+import { useNavigate } from "react-router-dom";
 
 type TitleProps = {
   title: string;
@@ -49,6 +50,13 @@ export const Recomended: React.FC<TitleProps> = ({ title }) => {
     },
   ];
 
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <span className="font-bold text-lg text-center md:text-start md:ms-2 xl:ms-0 text-gray-800 mt-16">
@@ -86,7 +94,10 @@ export const Recomended: React.FC<TitleProps> = ({ title }) => {
       >
         {items.map((item: any) => (
           <SwiperSlide key={item.id}>
-            <div className="flex justify-center my-3">
+            <div
+              onClick={() => handleNavigate("/products/details")}
+              className="flex justify-center my-3"
+            >
               <Card
                 className="w-60 cursor-pointer"
                 imgAlt="Apple Watch Series 7 in colors pink, silver, and black"

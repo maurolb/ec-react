@@ -12,6 +12,7 @@ export const ItemCard: React.FC<CardProps> = ({ item }) => {
   // todo: hacer bien esto
   const handleNavigate = (path: string) => {
     navigate(path);
+    window.scrollTo(0, 0);
   };
   return (
     <Card
