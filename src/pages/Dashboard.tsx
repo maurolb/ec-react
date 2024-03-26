@@ -1,5 +1,5 @@
 import { IconHistory, IconId, IconMapPin } from "@tabler/icons-react";
-import { Avatar, Button, Card, ToggleSwitch } from "flowbite-react";
+import { Avatar, Button, ToggleSwitch } from "flowbite-react";
 import { Recomended } from "../components/Recomended";
 import { useState } from "react";
 
